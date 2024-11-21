@@ -3,8 +3,8 @@
 Our Project for Project Exhibition - 1
 
 # Authors
-- Aanis Ali Shah [23BCE11501]
-- Bandhan Majumder [23BCE11234]
+- [Aanis Ali Shah](https://github.com/alight659) [23BCE11501]
+- [Bandhan Majumder](https://github.com/bandhan-majumder) [23BCE11234]
 
 # Teammates
 - Aanis Ali Shah [23BCE11501]
