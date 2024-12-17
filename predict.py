@@ -1,7 +1,6 @@
 import numpy as np
 import cv2
 import tensorflow as tf
-import argparse
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
@@ -59,19 +58,12 @@ def predictor(path):
     
 
     average_prediction = np.mean(predictions, axis=0)
-    types = ['Real', 'Fake']
+    class_names = ['Real', 'Fake']
     
     threshold = 0.5000000596046448
     if average_prediction[1] > threshold:
-        video_type = 1
+        video_class = 1
     else:
-        video_type = 0
+        video_class = 0
         
-    return [average_prediction[video_type], types[video_type]]
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='DeepFake Video Prediction - A project for Project Exhibition 1.')
-    parser.add_argument('video_file', type=str, help='Path to file')
-    args = parser.parse_args()
-    result = predictor(args.video_file)
-    print(f"\nFileName: {args.video_file}\nVideo Status: {result[1]}\nScore: {round(result[0] * 100)}%")
+    return [average_prediction[1], class_names[video_class]]
